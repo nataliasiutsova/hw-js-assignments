@@ -12,18 +12,17 @@ class Button {
 let greenButton = new Button(10, 5, 'button', 'green');
 console.log(greenButton);
 greenButton.oneClick();
-console.log(greenButton instanceof Button);
 
-function testButton() {
+function testButton(button) {
   if (
-    greenButton.width == 10 &&
-    greenButton.height == 5 &&
-    greenButton.type == 'button' &&
-    greenButton.color == 'green'
-  ) {
-    console.log('Instance properties match the specified properties');
-  } else {
-    console.log('Instance properties do not match the specified properties');
+    button.width == 10 &&
+    button.height == 5 &&
+    button.type == 'button' &&
+    button.color == 'green'
+  )
+    console.log('succes');
+  else {
+    console.log('error');
   }
 }
-testButton();
+testButton(greenButton);
