@@ -38,3 +38,34 @@ expencesExamples.forEach(function (expenceExample) {
     console.log('error');
   }
 });
+
+// ДЗ 8.2
+
+const monthName = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+const arr = [];
+
+expencesExamples.forEach(function (expenceExample) {
+  expenceExample.yearlyExpences.forEach(function (yearlyExpence, i) {
+    if (yearlyExpence <= 1000) {
+      let day = new Date(2023, i);
+      let month = monthName[day.getMonth()];
+      arr.push(month);
+    }
+  });
+  console.log(...arr);
+  arr.length = 0;
+});
